@@ -15,7 +15,7 @@ class MyGUI(QMainWindow):
 
         self.plusButton.clicked.connect(self.add_item)
         self.minusButton.clicked.connect(self.remove_item)
-        self.actionLoad.triggered.connect(self.open_file)
+        self.actionOpen.triggered.connect(self.open_file)
         self.actionSave.triggered.connect(self.save_file)
 
     def add_item(self):
