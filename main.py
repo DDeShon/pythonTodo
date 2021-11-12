@@ -2,6 +2,8 @@ from PyQt5.QtWidgets import *
 from PyQt5.QtGui import QFont, QStandardItemModel, QStandardItem
 from PyQt5 import uic
 
+import pickle
+
 class MyGUI(QMainWindow):
 
     def __init__(self):
@@ -48,6 +50,7 @@ class MyGUI(QMainWindow):
         filename, _ = QFileDialog.getSaveFileName(self, "Save File", "", "Todo Files (*.todo)", options=options)
         if filename != "":
             with open(filename, "wb") as f:
+                pickle.dump(item_list, f)
 
 app = QApplication([])
 window = MyGUI()
