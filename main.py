@@ -41,7 +41,9 @@ class MyGUI(QMainWindow):
         print("Open")
 
     def save_file(self):
-        print("Save")
+        item_list = []
+        for x in range(self.model.rowCount()):
+            item_list.append(self.model.item(x).text())
 
 app = QApplication([])
 window = MyGUI()
