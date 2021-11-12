@@ -40,7 +40,15 @@ class MyGUI(QMainWindow):
                 self.model.removeRow(selected.row())
 
     def open_file(self):
-        print("Open")
+        options = QFileDialog.Options()
+        filename, _ = QFileDialog.getOpenFileName(self, "Open File", "", "Todo Files (*.todo)", options=options)
+        if filename != "":
+            with open(filename, "rb") as f:
+                item_list = pickle.load(f)
+                self.model = QStandardItemModel()
+                self.listView.setModel(self.model)
+                for item in item_list:
+                    self.model.appendRow(QStandardItem(item))
 
     def save_file(self):
         item_list = []
