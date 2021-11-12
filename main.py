@@ -44,6 +44,10 @@ class MyGUI(QMainWindow):
         item_list = []
         for x in range(self.model.rowCount()):
             item_list.append(self.model.item(x).text())
+        options = QFileDialog.Options()
+        filename, _ = QFileDialog.getSaveFileName(self, "Save File", "", "Todo Files (*.todo)", options=options)
+        if filename != "":
+            with open(filename, "wb") as f:
 
 app = QApplication([])
 window = MyGUI()
