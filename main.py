@@ -32,7 +32,7 @@ class MyGUI(QMainWindow):
             selected = self.listView.selectedIndexes()[0]
 
             dialog = QMessageBox()
-            dialog.setText(f"Are you sure you want to remove '{selected.data()}'?")
+            dialog.setText(f"Are you sure you want to remove '{selected.data()}'? This action can not be undone.")
             dialog.addButton(QPushButton("Yes"), QMessageBox.YesRole)
             dialog.addButton(QPushButton("No"), QMessageBox.NoRole)
 
