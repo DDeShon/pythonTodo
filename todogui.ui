@@ -19,7 +19,7 @@
      <widget class="QListView" name="listView">
       <property name="font">
        <font>
-        <pointsize>12</pointsize>
+        <pointsize>16</pointsize>
        </font>
       </property>
      </widget>
